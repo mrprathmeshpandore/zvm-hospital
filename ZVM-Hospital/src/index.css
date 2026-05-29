@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #6366F1;
+  --color-on-primary: #ffffff;
+  --color-primary-container: rgba(99, 102, 241, 0.1);
+  --color-on-primary-container: #6366F1;
+
+  --color-secondary: #FF6B6B;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #FFE66D;
+  --color-on-secondary-container: #1A1A1A;
+
+  --color-tertiary: #4ECDC4;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #FAF9F6;
+  --color-on-tertiary-container: #1A1A1A;
+
+  --color-surface: #FAF9F6;
+  --color-on-surface: #1A1A1A;
+  --color-on-surface-variant: #64748b;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: rgba(99, 102, 241, 0.05);
+  --color-surface-container: #ffffff;
+  --color-surface-container-high: #f1f5f9;
+  --color-surface-container-highest: #e2e8f0;
+  
+  --color-outline: #cbd5e1;
+  --color-outline-variant: #e2e8f0;
+  
+  --color-error: #FF6B6B;
+  --color-error-container: #fee2e2;
+  --color-on-error-container: #991b1b;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+.heading-h1 {
+  @apply font-sans text-[48px] font-black tracking-tighter leading-[1.1];
+}
+
+.heading-h2 {
+  @apply font-sans text-[36px] font-black tracking-tight leading-[1.2];
+}
+
+.heading-h3 {
+  @apply font-sans text-[24px] font-bold leading-[1.3];
+}
+
+.body-lg {
+  @apply font-sans text-[18px] font-medium leading-[1.6];
+}
+
+.body-md {
+  @apply font-sans text-[16px] font-medium leading-[1.5];
+}
+
+.label-caps {
+  @apply font-sans text-[12px] font-black uppercase tracking-widest leading-none;
+}
+
+.vibrant-card {
+  @apply bg-white rounded-[40px] shadow-xl border border-outline-variant p-8 transition-transform hover:-translate-y-1;
+}
+
+.vibrant-button {
+  @apply bg-primary text-white px-8 py-4 rounded-2xl font-black text-lg shadow-lg hover:-translate-y-0.5 transition-all;
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+sqlite3.exe
+*.log
+venv/
+.venv/
