@@ -136,7 +136,7 @@ export default function PatientPortal() {
       const queryParam = patientEmail 
         ? `email=${encodeURIComponent(patientEmail)}` 
         : `phone=${encodeURIComponent(patientPhone || '')}`;
-      const response = await fetch(`http://localhost:8000/api/patient/enquiries/?${queryParam}`);
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/patient/enquiries/?${queryParam}`);
       if (response.ok) {
         const data = await response.json();
         setEnquiries(data);
@@ -153,7 +153,7 @@ export default function PatientPortal() {
   const handleDeleteAppointment = async (id: number) => {
     if (!window.confirm('Are you sure you want to cancel this appointment?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/appointments/${id}/`, {
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/appointments/${id}/`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -172,7 +172,7 @@ export default function PatientPortal() {
     if (!editingAppointment) return;
     setIsSubmittingEdit(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/appointments/${editingAppointment.id}/`, {
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/appointments/${editingAppointment.id}/`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editingAppointment),
@@ -195,7 +195,7 @@ export default function PatientPortal() {
   const handleDeleteEnquiry = async (id: number) => {
     if (!window.confirm('Are you sure you want to delete this enquiry?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/enquiries/${id}/`, {
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/enquiries/${id}/`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -214,7 +214,7 @@ export default function PatientPortal() {
     if (!editingEnquiry) return;
     setIsSubmittingEdit(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/enquiries/${editingEnquiry.id}/`, {
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/enquiries/${editingEnquiry.id}/`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editingEnquiry),
@@ -245,7 +245,7 @@ export default function PatientPortal() {
     
     try {
       const payload = loginMethod === 'email' ? { email } : { phone };
-      const response = await fetch('http://localhost:8000/api/send-otp/', {
+      const response = await fetch('https://zvm-hospital.onrender.com/api/send-otp/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -277,7 +277,7 @@ export default function PatientPortal() {
     
     try {
       const payload = loginMethod === 'email' ? { email } : { phone };
-      const response = await fetch('http://localhost:8000/api/send-otp/', {
+      const response = await fetch('https://zvm-hospital.onrender.com/api/verify-otp/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -347,7 +347,7 @@ export default function PatientPortal() {
         ? { email, otp: otpCode } 
         : { phone, otp: otpCode };
         
-      const response = await fetch('http://localhost:8000/api/verify-otp/', {
+      const response = await fetch('https://zvm-hospital.onrender.com/api/verify-otp/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
