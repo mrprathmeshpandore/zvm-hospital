@@ -116,7 +116,7 @@ export default function PatientPortal() {
       const queryParam = patientEmail 
         ? `email=${encodeURIComponent(patientEmail)}` 
         : `phone=${encodeURIComponent(patientPhone || '')}`;
-      const response = await fetch(`http://localhost:8000/api/patient/appointments/?${queryParam}`);
+      const response = await fetch(`https://zvm-hospital.onrender.com/api/patient/appointments/?${queryParam}`);
       if (response.ok) {
         const data = await response.json();
         setAppointments(data);
