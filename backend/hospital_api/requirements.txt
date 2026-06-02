@@ -1,5 +1,5 @@
-Django
+django
 djangorestframework
 django-cors-headers
-python-detenv
+python-dotenv
 gunicorn
