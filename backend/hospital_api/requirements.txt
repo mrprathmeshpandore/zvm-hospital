@@ -1,5 +1,5 @@
 Django
-djangoforestframework
+djangorestframework
 django-cors-headers
 python-detenv
 gunicorn
